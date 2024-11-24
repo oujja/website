@@ -70,17 +70,17 @@ export class HomeComponent implements OnInit {
   images: string[] = [];
 
   app1: string[] = [
-    '../../assets/swipeImages/app1/image.png',
-    '../../assets/swipeImages/app1/image0.png',
-    '../../assets/swipeImages/app1/image1.png',
+    'assets/swipeImages/app1/image.png',
+    'assets/swipeImages/app1/image0.png',
+    'assets/swipeImages/app1/image1.png',
   ];
 
   app2: string[] = [
-    '../../assets/swipeImages/app2/image.png',
-    '../../assets/swipeImages/app2/image0.png',
+    'assets/swipeImages/app2/image.png',
+    'assets/swipeImages/app2/image0.png',
   ];
 
-  app3: string[] = ['../../assets/swipeImages/image0.jpg'];
+  app3: string[] = ['assets/swipeImages/image0.jpg'];
 
   index = 0;
   swiperConfig: SwiperOptions = {
