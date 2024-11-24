@@ -1,0 +1,72 @@
+.full-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Volle Breite des Viewports */
+  height: 100vh; /* Volle Höhe des Viewports */
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-start; /* Inhalte von oben starten */
+  align-items: center;
+  transform: translateY(0vh); /* Startpunkt: komplett außerhalb des Viewports */
+  transition: transform 0.3s ease; /* Übergangszeit für die Animation */
+  z-index: 3000; /* Legt die Komponente über alles andere */
+}
+
+.full-screen.open {
+  transform: translateY(0);
+}
+.image-viewer {
+  width: 100%;
+  height: auto;
+  margin-top: 15px;
+  z-index: 4000;
+  padding-bottom: 100px;
+  img {
+    margin-top: 30px;
+    width: 100%;
+    height: 500px;
+    border-radius: 16px;
+    object-fit: contain;
+    // width: 300px;
+    // height: 600px;
+    // border-radius: 16px;
+    // object-fit: fill; //vorher war hier contain und width 100% und height 400px
+  }
+}
+.close-btn {
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: fixed; /* Absolute Positionierung */
+  top: 20px; /* Abstand von oben */
+  right: 30px; /* Abstand von rechts */
+  z-index: 3001;
+}
+
+.swiper-pagination {
+  bottom: 20px; /* Verschiebt die Pagination 20px vom unteren Rand */
+  position: absolute;
+  z-index: 10; /* Sicherstellen, dass die Pagination sichtbar bleibt */
+}
+
+@media only screen and (min-width: 400px) {
+  .image-viewer {
+    img {
+      height: 500px;
+    }
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .image-viewer {
+    img {
+      height: 600px;
+    }
+  }
+}

@@ -1,0 +1,782 @@
+<div class="container">
+  <header>
+    <div class="header-content">
+      <div class="overlay"></div>
+      <div class="dark-overlay"></div>
+
+      <nav>
+        <div class="logo">
+          <!-- <img src="../../assets/columbus-logo.png" alt="Default" /> -->
+        </div>
+
+        <div class="nav-menu">
+          <ul>
+            <li><a (click)="scrollToAboutMeSection()">Über mich</a></li>
+            <li><a (click)="scrollToServiceSection()">Meine Services</a></li>
+            <li><a (click)="scrollToProjectsSection()">Meine Projekte</a></li>
+            <li><a (click)="scrollToContactMeSection()">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="hamburger" (click)="toggleMenu()">
+          <i class="pi pi-bars"></i>
+        </div>
+      </nav>
+
+      <div class="image-title">
+        <div class="image-title-wrapper fade-in-section">
+          <div>
+            <h1 style="margin-bottom: 20px; text-align: start">
+              Entwickle deine Wunschsoftware!
+            </h1>
+          </div>
+          <div class="image-title-content">
+            <div style="margin-bottom: 25px">
+              <div class="icon-text">
+                <i class="pi pi-check"></i>
+                <p>Realisiere deine eigenen Vorstellungen.</p>
+              </div>
+              <div class="icon-text">
+                <i class="pi pi-check"></i>
+                <p>Erreiche deine Zielgruppe mit eigener Software.</p>
+              </div>
+              <div class="icon-text">
+                <i class="pi pi-check"></i>
+                <p>Schaffe das beste für deine Kunden.</p>
+              </div>
+            </div>
+            <button
+              pButton
+              class="button"
+              label="Kontaktieren"
+              (click)="scrollToContactMeSection()"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="container-without-header">
+      <div #aboutMeSection class="about-me-details fade-in-section">
+        <div class="border-left-right about-me-details-content">
+          <div>
+            <h1>Über mich</h1>
+            <p>
+              Mein Name ist Florian Christoph und komme aus Ostbelgien. <br />
+              Im Jahr 2017 habe ich einen Bachelorabschluss in
+              Betriebswirtschaftslehre abgeschlossen. Noch während meines
+              BWL-Studium kam ich, durch einige Vertiefungsmodule in Kontakt mit
+              Informatik und somit auch in Kontakt mit Programmierung von Apps,
+              Anwendungen und Webseiten, woraus sich schlussendlich eine
+              Leidenschaft entwickelte. Nach meinem abgeschlossenen
+              Bachelorstudium habe ich mich schlussendlich dazu entschieden
+              Wirtschafts-Informatik zu studieren, um meine Leidenschaft weiter
+              auszubauen. Seit Jahren entwickle ich somit bereits Apps und
+              Webseiten mit Leidenschaft. Um kontinuirlich weiterlernen zu
+              können und zeitgleich neue Kontakte zu knüpfen, biete ich an, für
+              meine Kunden ihre Wunschvorstellung umzusetzen.
+            </p>
+            <span class="name">Florian Christoph</span>
+            <br />
+            <span style="font-size: 12px">Softwareentwickler</span>
+          </div>
+          <div>
+            <img
+              src="../../assets/me.jpg"
+              alt="Default"
+              style="
+                object-fit: cover;
+                margin-top: 10px;
+                border-radius: 16px;
+                height: 100%;
+              "
+            />
+          </div>
+        </div>
+      </div>
+
+      <div #serviceSection class="service-container">
+        <div class="border-bottom"></div>
+        <div class="overlay"></div>
+        <!-- Overlay zur Abdunkelung -->
+
+        <div class="services fade-in-section">
+          <h1>Meine Services</h1>
+          <div class="services-content">
+            <div class="each-service">
+              <i class="pi pi-code"></i>
+              <p>Webseiten</p>
+            </div>
+            <div class="each-service">
+              <i class="pi pi-code"></i>
+              <p>Apps</p>
+            </div>
+            <div class="each-service">
+              <i class="pi pi-file-check"></i>
+              <p>Wartung/ Reparatur</p>
+            </div>
+            <div class="each-service">
+              <i class="pi pi-wrench"></i>
+              <p>Bugbehebung</p>
+            </div>
+            <div class="each-service">
+              <i class="pi pi-file-check"></i>
+              <p>Design</p>
+            </div>
+            <div class="each-service">
+              <i class="pi pi-wrench"></i>
+              <p>Hosting</p>
+            </div>
+          </div>
+          <div>
+            <p>
+              Ich entwickle Euch Eure App, Webseite oder Webanwendung nach Euren
+              Vorstellungen! <br />
+              <br />
+              Alle entwickelten Apps werden für Android und iOS zu Verfügung
+              stehen.
+            </p>
+          </div>
+          <p-button
+            label="Kontaktieren"
+            (click)="scrollToContactMeSection()"
+          ></p-button>
+        </div>
+      </div>
+
+      <div class="border-bottom"></div>
+      <div #projectSection class="projects fade-in-section">
+        <h1>Abgeschlossene Projekte</h1>
+        <p style="text-align: center">
+          Ich habe bereits mehere Projekte umgesetzt. Unter anderem diese
+          Webseite sowie weitere darunter angezeigt Apps, dessen Bilder auf
+          dieser Seite zu Verfügung gestellt werden.
+          <br />
+          <br />
+          Bei diesen Apps handelt es sich einmal um eine Haushaltsapp mit der
+          das tracken von Ausgaben und Eingaben ermöglicht wird. Bei der
+          "Portfolio-App" handelt es sich um eine Portfolioapp, hier können
+          Benutzer eigene Projekte hochladen und diese mit anderen Nutzern
+          teilen.
+        </p>
+
+        <h2>Meine Apps</h2>
+        <div
+          style="display: flex; flex-direction: row; justify-content: center"
+        >
+          <div
+            class="project-app"
+            (click)="showAppImages('app1')"
+            [ngStyle]="
+              selectedApp == 'app1'
+                ? {
+                    background:
+                      ' linear-gradient(
+                    to right,
+                    #00a2a2,
+                    #93c9c9)',
+                    'box-shadow': '0 4px 30px rgba(0, 162, 162, 0.8)'
+                  }
+                : { 'background-color': 'rgb(56, 56, 56)' }
+            "
+          >
+            <span>Haushalts-App</span>
+          </div>
+          <div
+            class="project-app"
+            (click)="showAppImages('app2')"
+            [ngStyle]="
+              selectedApp == 'app2'
+                ? {
+                    background:
+                      ' linear-gradient(
+                      to right,
+                      #00a2a2,
+                      #93c9c9)',
+                    'box-shadow': '0 4px 30px rgba(0, 162, 162, 0.8)'
+                  }
+                : { 'background-color': 'rgb(56, 56, 56)' }
+            "
+          >
+            <span>Portfolio-App</span>
+          </div>
+        </div>
+        <div class="image-swiper">
+          <swiper-container
+            appSwiper
+            #swiper
+            autoplay="true"
+            [pagination]="false"
+            [config]="swiperConfig"
+            (slidechange)="slideChange($event)"
+          >
+            <swiper-slide *ngFor="let image of images">
+              <img [src]="image" alt="" (click)="openImages()" />
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      </div>
+
+      <div class="information-contact-container fade-in-section">
+        <div class="informations-about-me">
+          <div>
+            <h1>Gemeinsam Internet Präsenz schaffen!</h1>
+            <p>
+              Wir sorgen gemeinsam dafür, dass Du, mit deinem Unternehmer oder
+              auch als Privatperson eine Internetpräsenz zu schaffen. Durch das
+              entwickeln und Veröffentlichen einer Webseite steigert sich die
+              Chance, im Internet gefunden und als Auftraggeber gebucht zu
+              werden.
+            </p>
+          </div>
+          <div class="adress">
+            <div class="adress-data">
+              <div class="adress-logo">
+                <i class="pi pi-map-marker"></i>
+              </div>
+              <div class="adress-info">
+                <span>Aachen</span>
+                <span style="color: gray; font-size: 13px"
+                  >Aachener Straße 25</span
+                >
+              </div>
+            </div>
+
+            <div class="mail">
+              <div class="mail-logo">
+                <i class="pi pi-envelope"></i>
+              </div>
+              <div class="email-adress">
+                <span>example&#64;email.com</span>
+              </div>
+            </div>
+            <div class="telefon">
+              <div class="telefon-logo">
+                <i class="pi pi-phone"></i>
+              </div>
+              <div class="text">
+                <span>+ 4917213945356</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div #contactMeSection class="contact-me">
+          <form [formGroup]="contactForm">
+            <!-- <input type="hidden" name="access_key" value="44adc64f-7cce-47af-ac99-48762c215cfe"> -->
+
+            <h2>Kontaktiere mich gerne!</h2>
+            <div>
+              <input
+                placeholder="Dein Name*"
+                type="text"
+                pInputText
+                name="name"
+                formControlName="name"
+              />
+              <div
+                *ngIf="
+                  contactForm.get('name')?.invalid &&
+                  contactForm.get('name')?.touched
+                "
+                style="color: red; margin-bottom: 10px"
+              >
+                Name wird benötigt
+              </div>
+              <input
+                placeholder="Deine E-Mail*"
+                type="email"
+                pInputText
+                name="email"
+                formControlName="email"
+              />
+              <div
+                *ngIf="
+                  contactForm.get('email')?.invalid &&
+                  contactForm.get('email')?.touched
+                "
+                style="color: red; margin-bottom: 10px"
+              >
+                Eine korrekte E-Mail wird benötigt
+              </div>
+              <input
+                placeholder="Deine Telefonnummer"
+                type="text"
+                pInputText
+                name="phone"
+                formControlName="phone"
+              />
+              <textarea
+                pInputTextarea
+                name="message"
+                required
+                type="text"
+                placeholder="Deine Nachricht*"
+                formControlName="message"
+                row="8"
+                class="contact-textarea"
+              ></textarea>
+              <div
+                *ngIf="
+                  contactForm.get('message')?.invalid &&
+                  contactForm.get('message')?.touched
+                "
+                style="color: red; margin-bottom: 10px"
+              >
+                Nachricht wird benötigt
+              </div>
+            </div>
+            <div>
+              <p-button
+                type="submit"
+                label="Kontaktieren"
+                class="custom-button"
+                [disabled]="false"
+                (click)="onSubmitContactForm()"
+              ></p-button>
+              <div
+                *ngIf="mailSendSuccessfully"
+                style="color: green; margin-top: 10px; font: 25px"
+              >
+                Deine E-Mail wurde erfolgreich versendet!
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <footer>
+    <div class="footer-informations">
+      <img
+        src="../../assets/logo.png"
+        alt="Footer-LOGO"
+        width="100px"
+        height="100px"
+      />
+      <b
+        ><p>
+          &copy; {{ currentYearLong() }} Columbus GmbH &#183; All rights
+          reserved
+        </p></b
+      >
+
+      <div class="impressum">
+        <div (click)="openImpressum()">
+          <b><p>Impressum</p></b>
+        </div>
+        <div (click)="openDatenschutz()">
+          <b><p>Datenschutz</p></b>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<app-sidebar
+  [isOpen]="isMenuOpen"
+  (closeMenu)="toggleMenu()"
+  (sideSelected)="sideSelected($event)"
+></app-sidebar>
+<app-image-viewer
+  [images]="images"
+  [isOpen]="isImagesOpen"
+  (closeImageViewer)="isImageViewerClosed()"
+></app-image-viewer>
+
+<!-- <div class="container">
+  <body>
+    <app-sidebar
+      [isOpen]="isMenuOpen"
+      (closeMenu)="toggleMenu()"
+      (sideSelected)="sideSelected($event)"
+    ></app-sidebar>
+    <app-image-viewer
+      [images]="images"
+      [isOpen]="isImagesOpen"
+      (closeImageViewer)="isImageViewerClosed()"
+    ></app-image-viewer>
+
+    <div class="header-image">
+      <img src="../../assets/coding.jpg" alt="Default" /> -->
+<!--
+      <nav>
+        <div class="logo">
+        -->
+<!-- <img src="../../assets/columbus-logo.png" alt="Default" /> -->
+<!--
+        </div>
+
+        <div class="nav-menu">
+          <ul>
+            <li><a (click)="scrollToAboutMeSection()">Über mich</a></li>
+            <li><a (click)="scrollToServiceSection()">Meine Services</a></li>
+            <li><a (click)="scrollToProjectsSection()">Meine Projekte</a></li>
+            <li><a (click)="scrollToContactMeSection()">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="hamburger" (click)="toggleMenu()">
+          <i class="pi pi-bars"></i>
+        </div>
+      </nav>
+
+      <div class="image-title">
+        <div class="image-title-wrapper fade-in-section">
+          <div>
+            <h2 style="margin-bottom: 20px; text-align: start">
+              Entwickle deine Wunschsoftware!
+            </h2>
+          </div>
+          <div class="image-title-content">
+            <div style="margin-bottom: 25px">
+              <div class="icon-text">
+                <i class="pi pi-check"></i>
+                <p>Realisiere deine eigenen Vorstellungen.</p>
+              </div>
+              <div class="icon-text">
+                <i class="pi pi-check"></i>
+                <p>Erreiche deine Zielgruppe mit eigener Software.</p>
+              </div>
+              <div class="icon-text">
+                <i class="pi pi-check"></i>
+                <p>Schaffe das beste für deine Kunden.</p>
+              </div>
+            </div>
+            <button
+              pButton
+              class="button"
+              label="Kontaktieren"
+              (click)="scrollToContactMeSection()"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-without-header">
+      <div #aboutMeSection class="about-me-details fade-in-section">
+        <div class="border-left-right about-me-details-content">
+          <div>
+            <h1>Über mich</h1>
+            <p>
+              Mein Name ist Florian Christoph und komme aus Ostbelgien. <br />
+              Im Jahr 2017 habe ich einen Bachelorabschluss in
+              Betriebswirtschaftslehre abgeschlossen. Noch während meines
+              BWL-Studium kam ich, durch einige Vertiefungsmodule in Kontakt mit
+              Informatik und somit auch in Kontakt mit Programmierung von Apps,
+              Anwendungen und Webseiten, woraus sich schlussendlich eine
+              Leidenschaft entwickelte. Nach meinem abgeschlossenen
+              Bachelorstudium habe ich mich schlussendlich dazu entschieden
+              Wirtschafts-Informatik zu studieren, um meine Leidenschaft weiter
+              auszubauen. Seit Jahren entwickle ich somit bereits Apps und
+              Webseiten mit Leidenschaft. Um kontinuirlich weiterlernen zu
+              können und zeitgleich neue Kontakte zu knüpfen, biete ich an, für
+              meine Kunden ihre Wunschvorstellung umzusetzen.
+            </p>
+            <span>Florian Christoph</span>
+            <br />
+            <span style="font-size: 12px">Softwareentwickler</span>
+          </div>
+          <div>
+            <img
+              src="../../assets/me.jpg"
+              alt="Default"
+              style="
+                object-fit: cover;
+                margin-top: 10px;
+                border-radius: 16px;
+                height: 100%;
+              "
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="border-bottom"></div>
+      <div #serviceSection class="service-container">
+        <div class="overlay"></div>
+         Overlay zur Abdunkelung -->
+<!--
+        <div class="services fade-in-section">
+          <h1>Meine Services</h1>
+          <div class="services-content">
+            <div class="each-service">
+              <i class="pi pi-code"></i>
+              <p>Webseiten</p>
+            </div>
+            <div class="each-service">
+              <i class="pi pi-code"></i>
+              <p>Apps</p>
+            </div>
+            <div class="each-service">
+              <i class="pi pi-file-check"></i>
+              <p>Wartung/ Reparatur</p>
+            </div>
+            <div class="each-service">
+              <i class="pi pi-wrench"></i>
+              <p>Bugbehebung</p>
+            </div>
+            <div class="each-service">
+              <i class="pi pi-file-check"></i>
+              <p>Design</p>
+            </div>
+            <div class="each-service">
+              <i class="pi pi-wrench"></i>
+              <p>Hosting</p>
+            </div>
+          </div>
+          <div>
+            <p>
+              Ich entwickle Euch Eure App, Webseite oder Webanwendung nach Euren
+              Vorstellungen! <br />
+              <br />
+              Meine Services umfassen die Entwicklung, das Hosting oder auch
+              Wartung und Reperatur einer Webseite, App oder Webanwendung. Hier
+              könnt ihr eure Anwendung nach euren Wünschen erstellen und
+              umsetzen lassen. Die entwickelten Apps werden für die Plattformen
+              Android und iOS zu Verfügung stehen.
+            </p>
+          </div>
+          <p-button
+            label="Kontaktieren"
+            (click)="scrollToContactMeSection()"
+          ></p-button>
+        </div>
+      </div>
+
+      <div class="border-bottom"></div>
+      <div #projectSection class="projects fade-in-section">
+        <h1>Abgeschlossene Projekte</h1>
+        <p style="text-align: center">
+          Ich habe bereits mehere Projekte umgesetzt. Unter anderem diese
+          Webseite sowie weitere darunter angezeigt Apps, dessen Bilder auf
+          dieser Seite zu Verfügung gestellt werden.
+          <br />
+          <br />
+          Bei diesen Apps handelt es sich einmal um eine Haushaltsapp mit der
+          das tracken von Ausgaben und Eingaben ermöglicht wird. Bei der
+          "Portfolio-App" handelt es sich um eine Portfolioapp, hier können
+          Benutzer eigene Projekte hochladen und diese mit anderen Nutzern
+          teilen.
+        </p>
+
+        <h2>Meine Apps</h2>
+        <div
+          style="display: flex; flex-direction: row; justify-content: center"
+        >
+          <div
+            class="project-app"
+            (click)="showAppImages('app1')"
+            [ngStyle]="
+              selectedApp == 'app1'
+                ? {
+                    background:
+                      ' linear-gradient(
+                    to right,
+                    #00a2a2,
+                    #93c9c9)',
+                    'box-shadow': '0 4px 30px rgba(0, 162, 162, 0.8)'
+                  }
+                : { 'background-color': 'rgb(56, 56, 56)' }
+            "
+          >
+            <span>Haushalts-App</span>
+          </div>
+          <div
+            class="project-app"
+            (click)="showAppImages('app2')"
+            [ngStyle]="
+              selectedApp == 'app2'
+                ? {
+                    background:
+                      ' linear-gradient(
+                      to right,
+                      #00a2a2,
+                      #93c9c9)',
+                    'box-shadow': '0 4px 30px rgba(0, 162, 162, 0.8)'
+                  }
+                : { 'background-color': 'rgb(56, 56, 56)' }
+            "
+          >
+            <span>Portfolio-App</span>
+          </div>
+        </div>
+        <div class="image-swiper">
+          <swiper-container
+            appSwiper
+            #swiper
+            autoplay="true"
+            [pagination]="false"
+            [config]="swiperConfig"
+            (slidechange)="slideChange($event)"
+          >
+            <swiper-slide *ngFor="let image of images">
+              <img [src]="image" alt="" (click)="openImages()" />
+            </swiper-slide>
+          </swiper-container>
+        </div>
+      </div>
+
+      <div class="information-contact-container fade-in-section">
+        <div class="informations-about-me">
+          <div>
+            <h1>Gemeinsam Internet Präsenz schaffen!</h1>
+            <p>
+              Wir sorgen gemeinsam dafür, dass Du, mit deinem Unternehmer oder
+              auch als Privatperson eine Internetpräsenz zu schaffen. Durch das
+              entwickeln und Veröffentlichen einer Webseite steigert sich die
+              Chance, im Internet gefunden und als Auftraggeber gebucht zu
+              werden.
+            </p>
+          </div>
+          <div class="adress">
+            <div class="adress-data">
+              <div class="adress-logo">
+                <i class="pi pi-map-marker"></i>
+              </div>
+              <div class="adress-info">
+                <span>Aachen</span>
+                <span style="color: gray; font-size: 13px"
+                  >Aachener Straße 25</span
+                >
+              </div>
+            </div>
+
+            <div class="mail">
+              <div class="mail-logo">
+                <i class="pi pi-envelope"></i>
+              </div>
+              <div class="email-adress">
+                <span>example&#64;email.com</span>
+              </div>
+            </div>
+            <div class="telefon">
+              <div class="telefon-logo">
+                <i class="pi pi-phone"></i>
+              </div>
+              <div class="text">
+                <span>+ 4917213945356</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div #contactMeSection class="contact-me">
+          <form [formGroup]="contactForm">
+             -->
+<!-- <input type="hidden" name="access_key" value="44adc64f-7cce-47af-ac99-48762c215cfe"> -->
+<!--
+            <h2>Kontaktiere mich gerne!</h2>
+            <div>
+              <input
+                placeholder="Dein Name*"
+                type="text"
+                pInputText
+                name="name"
+                formControlName="name"
+              />
+              <div
+                *ngIf="
+                  contactForm.get('name')?.invalid &&
+                  contactForm.get('name')?.touched
+                "
+                style="color: red; margin-bottom: 10px"
+              >
+                Name wird benötigt
+              </div>
+              <input
+                placeholder="Deine E-Mail*"
+                type="email"
+                pInputText
+                name="email"
+                formControlName="email"
+              />
+              <div
+                *ngIf="
+                  contactForm.get('email')?.invalid &&
+                  contactForm.get('email')?.touched
+                "
+                style="color: red; margin-bottom: 10px"
+              >
+                Eine korrekte E-Mail wird benötigt
+              </div>
+              <input
+                placeholder="Deine Telefonnummer"
+                type="text"
+                pInputText
+                name="phone"
+                formControlName="phone"
+              />
+              <textarea
+                pInputTextarea
+                name="message"
+                required
+                type="text"
+                placeholder="Deine Nachricht*"
+                formControlName="message"
+                row="8"
+                class="contact-textarea"
+              ></textarea>
+              <div
+                *ngIf="
+                  contactForm.get('message')?.invalid &&
+                  contactForm.get('message')?.touched
+                "
+                style="color: red; margin-bottom: 10px"
+              >
+                Nachricht wird benötigt
+              </div>
+            </div>
+            <div>
+              <p-button
+                type="submit"
+                label="Kontaktieren"
+                class="custom-button"
+                [disabled]="false"
+                (click)="onSubmitContactForm()"
+              ></p-button>
+              <div
+                *ngIf="mailSendSuccessfully"
+                style="color: green; margin-top: 10px; font: 25px"
+              >
+                Deine E-Mail wurde erfolgreich versendet!
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <footer>
+    <div class="footer-informations">
+      <img
+        src="../../assets/logo.png"
+        alt="Footer-LOGO"
+        width="100px"
+        height="100px"
+      />
+      <b
+        ><p>
+          &copy; {{ currentYearLong() }} Columbus GmbH &#183; All rights
+          reserved
+        </p></b
+      >
+
+      <div class="impressum">
+        <div>
+          <b><p>Impressum</p></b>
+        </div>
+        <div>
+          <b><p>Datenschutz</p></b>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div> -->
+<!-- </form>
+      </div>
+    </div>
+  </div>
+</div> -->

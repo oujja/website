@@ -1,0 +1,17 @@
+<div class="full-screen" *ngIf="isOpen">
+  <div class="image-viewer">
+    <i class="pi pi-times close-btn" (click)="closeImageViewer.emit()"></i>
+    <swiper-container
+      appSwiper
+      #swiper
+      autoplay="true"
+      [pagination]="true"
+      [config]="swiperConfig"
+      (slidechange)="slideChange($event)"
+    >
+      <swiper-slide *ngFor="let image of images">
+        <img [src]="image" alt="" />
+      </swiper-slide>
+    </swiper-container>
+  </div>
+</div>
