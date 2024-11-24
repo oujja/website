@@ -1,0 +1,72 @@
+/* sidebar.component.css */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 20px;
+  display: flex; /* Flexbox-Layout aktivieren */
+  flex-direction: column; /* Elemente in einer Spalte anordnen */
+  justify-content: flex-start; /* Beginne die Flexbox-Anordnung am oberen Rand */
+  align-items: center; /* Elemente horizontal zentrieren */
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  z-index: 3000;
+}
+
+.sidebar.open {
+  transform: translateY(0);
+}
+
+/* Schließen-Button oben rechts */
+.close-btn {
+  font-size: 20px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  position: fixed; /* Absolute Positionierung */
+  top: 20px; /* Abstand von oben */
+  right: 30px; /* Abstand von rechts */
+  z-index: 1001;
+}
+
+/* Zentrierte Liste */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+
+  margin: 5rem 0 0 0; /* Kein zusätzlicher Margin */
+  text-align: start; /* Text in der Mitte ausrichten */
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+}
+
+.sidebar a:hover {
+  background-color: #555;
+  border-radius: 4px;
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 768px) {
+}
